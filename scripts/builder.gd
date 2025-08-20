@@ -10,10 +10,11 @@ var return_path: Array[Vector2] = []
 var travel_path: Array[Vector2] = []
 var returning: bool = false
 var direction: Vector2 = Vector2.ZERO
+var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
-    randomize()
-    direction = Vector2.RIGHT.rotated(randf() * TAU).normalized()
+    rng.randomize()
+    direction = Vector2.RIGHT.rotated(rng.randf() * TAU).normalized()
     return_path.append(global_position)
 
 func _physics_process(delta: float) -> void:
@@ -27,7 +28,7 @@ func _explore_step(delta: float) -> void:
     return_path.append(global_position)
     if not Influence.is_influenced(global_position):
         _build_city()
-        travel_path = return_path.duplicate()
+        travel_path = return_path.duplicate() as Array[Vector2]
         travel_path.reverse()
         returning = true
 
