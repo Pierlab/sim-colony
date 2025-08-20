@@ -3,7 +3,7 @@ class_name Builder
 
 signal cycle_completed(city: Node)
 
-@export var speed: float = 100.0
+@@export var speed: float = 100.0
 
 var built_city: Node = null
 var return_path: Array[Vector2] = []

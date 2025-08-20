@@ -1,7 +1,7 @@
 extends Node2D
 class_name Inhabitant
 
-@export var speed: float = 100.0
+@@export var speed: float = 100.0
 var path: Array[Vector2] = []
 var city: Node = null
 

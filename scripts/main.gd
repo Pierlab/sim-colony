@@ -4,7 +4,7 @@ const WORLD_SIZE := Vector2i(2000, 2000)
 
 var capital_scene: PackedScene = preload("res://scenes/Capital.tscn")
 
-@onready var tile_map: TileMap = $TileMap
+@@onready var tile_map: TileMap = $TileMap
 var capital: Node2D
 
 var simulation_time: float = 0.0

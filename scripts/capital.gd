@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var influence_radius: float = 250.0
+@@export var influence_radius: float = 250.0
 var resources: Dictionary = {}
 const Inhabitant = preload("res://scripts/inhabitant.gd")
 

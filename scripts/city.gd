@@ -2,7 +2,7 @@ extends Area2D
 
 signal road_connected(road: Node)
 
-@export var influence_radius: float = 250.0
+@@export var influence_radius: float = 250.0
 var occupied: bool = false
 var connected_road: Node = null
 
