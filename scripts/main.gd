@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func schedule_event(delay: float, action: Callable) -> void:
     event_queue.append({"time": simulation_time + delay, "action": action})
-    event_queue.sort_custom(func(a, b): return a["time"] < b["time"])
+    event_queue.sort_custom(func(a, b) -> bool: return a["time"] < b["time"])
 
 func _process_events() -> void:
     while event_queue.size() > 0 and event_queue[0]["time"] <= simulation_time:
