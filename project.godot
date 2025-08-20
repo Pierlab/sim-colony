@@ -1,0 +1,8 @@
+; Engine configuration file.
+; It's recommended to edit this file with the Godot editor.
+
+config_version=5
+
+[application]
+config/name="Sim Colony"
+run/main_scene="res://scenes/Main.tscn"
