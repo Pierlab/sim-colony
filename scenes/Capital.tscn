@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://capital"]
+
+[ext_resource path="res://assets/sprites/capital.png" type="Texture2D" id=1]
+[ext_resource path="res://scripts/capital.gd" type="Script" id=2]
+
+[node name="Capital" type="Node2D"]
+script = ExtResource(2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource(1)

@@ -1,0 +1,17 @@
+extends Node2D
+
+@export var influence_radius: float = 250.0
+var resources: Dictionary = {}
+
+func add_resource(resource_type: String, amount: int) -> void:
+    resources[resource_type] = resources.get(resource_type, 0) + amount
+
+func get_resource(resource_type: String) -> int:
+    return resources.get(resource_type, 0)
+
+func spawn_builder() -> Node:
+    var builder_scene: PackedScene = preload("res://scenes/Builder.tscn")
+    var builder = builder_scene.instantiate()
+    builder.global_position = global_position
+    get_tree().current_scene.add_child(builder)
+    return builder
