@@ -16,5 +16,13 @@ func spawn_builder() -> Node:
     var builder_scene: PackedScene = preload("res://scenes/Builder.tscn")
     var builder = builder_scene.instantiate()
     builder.global_position = global_position
+    builder.cycle_completed.connect(_on_builder_cycle_completed)
     get_tree().current_scene.add_child(builder)
     return builder
+
+func _on_builder_cycle_completed(city: Node) -> void:
+    spawn_inhabitant(city)
+
+func spawn_inhabitant(_city: Node) -> void:
+    # TODO: implement inhabitant spawning
+    pass
