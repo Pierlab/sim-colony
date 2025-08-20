@@ -11,7 +11,7 @@ func _ready() -> void:
     add_child(sprite)
 
 func set_path(path_points: Array[Vector2], target_city: Node) -> void:
-    path = path_points.duplicate()
+    path = path_points.duplicate() as Array[Vector2]
     city = target_city
 
 func _physics_process(delta: float) -> void:
