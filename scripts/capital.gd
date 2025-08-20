@@ -2,6 +2,7 @@ extends Node2D
 
 @export var influence_radius: float = 250.0
 var resources: Dictionary = {}
+const Inhabitant = preload("res://scripts/inhabitant.gd")
 
 func add_resource(resource_type: String, amount: int) -> void:
     resources[resource_type] = resources.get(resource_type, 0) + amount
@@ -24,5 +25,7 @@ func _on_builder_cycle_completed(city: Node) -> void:
     spawn_inhabitant(city)
 
 func spawn_inhabitant(_city: Node) -> void:
-    # TODO: implement inhabitant spawning
-    pass
+    var inhabitant: Node2D = Inhabitant.new()
+    inhabitant.global_position = global_position
+    inhabitant.set_path(Roads.get_path_to(_city), _city)
+    get_tree().current_scene.add_child(inhabitant)
