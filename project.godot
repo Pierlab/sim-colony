@@ -6,3 +6,7 @@ config_version=5
 [application]
 config/name="Sim Colony"
 run/main_scene="res://scenes/Main.tscn"
+
+[autoload]
+Influence="*res://scripts/systems/influence.gd"
+Roads="*res://scripts/systems/roads.gd"
