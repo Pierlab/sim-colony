@@ -9,6 +9,9 @@ func add_resource(resource_type: String, amount: int) -> void:
 func get_resource(resource_type: String) -> int:
     return resources.get(resource_type, 0)
 
+func _ready() -> void:
+    Influence.add_zone(global_position, influence_radius)
+
 func spawn_builder() -> Node:
     var builder_scene: PackedScene = preload("res://scenes/Builder.tscn")
     var builder = builder_scene.instantiate()
